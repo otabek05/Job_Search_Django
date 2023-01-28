@@ -1,4 +1,4 @@
-
+asgiref==3.5.2
 beautifulsoup4==4.11.1
 certifi==2022.9.24
 chardet==3.0.4
@@ -39,4 +39,5 @@ tzdata==2022.6
 urllib3==1.26.13
 virtualenv==20.16.7
 virtualenv-clone==0.5.7
-
+wikipedia==1.4.0
+Wikipedia-API==0.5.8
