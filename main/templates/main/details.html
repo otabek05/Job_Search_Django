@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+
+<div style="margin-top: 10%;" class="card">
+    <h5  class="card-header"><b>E'lon beruvchi: </b>{{ job.company_name.capitalize }}</h5>
+    <div class="card-body">
+        <h5 class="card-title"><b>Ish Nome: </b>{{ job.title.capitalize }}</h5>
+        <p class="card-text"><b>Ish Turi: </b>{{ job.category.name }}</p>
+        <p class="card-text"><b>Hudud: </b>{{ job.location.name }}</p>
+        <p class="card-text"><b>Ish haqida ma'lumot: </b>{{ job.descript }}</p>
+        <p class="card-text"><b>Oliy Ta'lim ma'lumoti: </b>{{ job.education.name.capitalize }}</p>
+        <p class="card-text"><b>Maosh: </b>{{ job.salary }}</p>
+        {% if job.created %}
+        <p class="card-text"><b>Ish Turi: </b>{{ job.created }}</p>
+        {% endif %}
+        {% if request.user != job.owner %}
+      <a href="#" class="btn btn-success">Xabar Yuborish</a>
+        {% endif %}
+    </div>
+  </div>
+
+{% endblock %}

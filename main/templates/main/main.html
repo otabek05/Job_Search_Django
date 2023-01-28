@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+{% include 'components/search.html' %}
+
+
+
+ 
+<div  class="container d-flex justify-content-center flex-column">
+  {% for job in jobs %}
+  <div class="container w-60 d-flex flex-column justify-content-center m-2">
+
+  
+  <a href="{% url 'details' id=job.id %}" class=""  style="text-decoration:none;">
+    <div class="card">
+     
+      <div class="card-body">
+        <h5 class="card-title">{{ job.title.capitalize }}</h5>
+        <p style="color: darkgoldenrod;">{{ job.company_name }}</p>
+        <p style="color: rgb(61, 60, 58);font-weight: 500;">{{ job.owner }}</p>
+      </div>
+   </div>
+  </a>
+</div>
+    
+    {% endfor %}
+ 
+</div>
+ 
+{% endblock %}

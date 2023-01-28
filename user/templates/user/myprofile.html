@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+<ul style="margin-top: 5%;" class="nav justify-content-center bg-dark p-2">
+    
+    <li class="nav-item">
+      <a class="btn btn-dark btn-outline-light m-2" href="{% url 'my_page' %}">Mening E'lonlarim</a>
+    </li>
+    <li class="nav-item">
+      <a class="btn btn-dark btn-outline-light m-2" href="#">Xabarlar</a>
+    </li>
+  </ul>
+
+
+  
+<div class="container w-50">
+    {% for sort in sorts %}
+    <div class="container w-60 d-flex flex-column justify-content-center m-2">
+    <a href="{% url 'details' id=sort.id %}" style="text-decoration:none; margin-bottom: 10px;">
+      <div class="card ">
+       
+        <div class="card-body">
+          <h5 class="card-title">{{ sort.title.capitalize }}</h5>
+          <p style="color: darkgoldenrod;">{{ sort.company_name }}</p>
+        </div>
+        <div class="container">
+            <a class="btn btn-success m-2" href="{% url 'update' id=sort.id %}">O'zgartirish Kiritish</a>
+            <a class="btn btn-danger m-2" href="{% url 'delete' id=sort.id %}">O'chirish</a>
+
+        </div>
+       
+     </div>
+    </a>
+    </div>
+      
+      {% endfor %}
+   
+  </div>
+{% endblock %}

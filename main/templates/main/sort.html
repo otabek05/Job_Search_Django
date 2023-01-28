@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+<ul style="margin-top: 10%;" class="nav  justify-content-center">
+    <div class="dropdown">
+      <button class="btn btn-warning btn-outline-success text-dark m-1 p-2 dropdown-toggle " style="text-transform: uppercase;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Kategoriyalar
+      </button>
+      <ul class="dropdown-menu dropdown-menu-dark">
+        {% for category in categories %}
+        <li><a class="dropdown-item "  style="text-transform: uppercase; font-size: 18px;" href="{% url 'category' id=category.id %}">{{ category.name }}</a></li>
+        <li><hr class="dropdown-divider"></li>
+        {% endfor %}
+      </ul>
+    </div>
+      {% for location in locations %}
+      <li class="nav-item">
+        <a class="btn btn-dark btn-outline-success text-light m-1 p-2" style="font-size: 18px;text-transform: uppercase;" aria-current="page" href="{% url 'location' id=location.id %}">{{ location.name }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+
+
+
+
+    <h1 class="text-center">{{ title }}</h1>
+
+<div class="container w-50">
+    {% for sort in sorts %}
+    <div class="container w-60 d-flex flex-column justify-content-center m-2">
+    <a href="{% url 'details' id=sort.id %}" style="text-decoration:none; margin-bottom: 10px;">
+      <div class="card ">
+       
+        <div class="card-body">
+          <h5 class="card-title">{{ sort.title.capitalize }}</h5>
+          <p style="color: darkgoldenrod;">{{ sort.company_name }}</p>
+        </div>
+     </div>
+    </a>
+    </div>
+      
+      {% endfor %}
+   
+  </div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+
+<div class="container-fluid w-25 m-auto">
+    <form action="" method="post" class="form form-control">
+        {% csrf_token %}
+        <h4 class="text-center">Registratsiya</h4>
+      {{ form }}
+      <button class="btn btn-primary m-2">Ro'yxatdan O'tish</button>
+    </form>
+</div>
+
+{% endblock %}

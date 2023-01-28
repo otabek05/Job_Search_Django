@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+<h1 style="margin-top: 10%;" class="text-center">{{ title }}</h1>
+<div style="margin-top:2%;" class="container w-50">
+    {% for sort in sorts %}
+  <div class="container w-60 d-flex flex-column justify-content-center m-2">
+
+    <a href="{% url 'details' id=sort.id %}" style="text-decoration:none; margin-bottom: 10px;">
+      <div class="card ">
+       
+        <div class="card-body">
+          <h5 class="card-title">{{ sort.title.capitalize }}</h5>
+          <p style="color: darkgoldenrod;">{{ sort.company_name }}</p>
+        </div>
+     </div>
+    </a>
+  </div> 
+      {% endfor %}
+   
+  </div>
+
+
+{% endblock %}

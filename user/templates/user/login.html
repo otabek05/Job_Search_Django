@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+  <form action='' style="margin-top: 10%; margin-left: 35%;"  class="form form-control w-25 p-3 " method='post'>
+  {% csrf_token %}
+  <label class=""  for="username">Username</label>
+  <input class="form-control" type="text" name="username"  />
+
+  <label class="" for="password">Password</label>
+  <input class="form-control" type="password" name="password"  />
+  <div  class="password error"></div>
+  <small class="m-2">Accountingiz yo'qmi!? <a class="text-primary" href="{ url'register' }">Ro'yxatdan o'tish</a></small>
+  <button class="btn btn-primary mt-3 d-block"  type="submit">login</button>
+</form>
+
+
+{% endblock %}

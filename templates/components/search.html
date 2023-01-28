@@ -1,0 +1,29 @@
+
+
+<ul style="margin-top: 10%;" class=" nav justify-content-center">
+  <div class="dropdown">
+    <button class="btn btn-warning btn-outline-success text-light m-1 p-2 dropdown-toggle " style="text-transform: uppercase;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Kategoriyalar
+    </button>
+    <ul class="dropdown-menu dropdown-menu-dark">
+      {% for category in categories %}
+      <li><a class="dropdown-item "  style="text-transform: uppercase; font-size: 18px;" href="{% url 'category' id=category.id %}">{{ category.name }}</a></li>
+      <li><hr class="dropdown-divider"></li>
+      {% endfor %}
+    </ul>
+  </div>
+    {% for location in locations %}
+    <li class="nav-item">
+      <a class="btn btn-dark btn-outline-success text-light m-1 p-2" style="font-size: 18px;text-transform: uppercase;box-shadow: 0px 0px 10px black;" aria-current="page" href="{% url 'location' id=location.id %}">{{ location.name }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  
+  
+  
+  <div  class=" input-group w-50 container mb-3 p-2">
+    <form  action="{% url 'search' %}" class=" input-group container mb-3 p-2" method="get">
+      <input style="box-shadow: 0px 0px 10px black" type="text" name="q" class="form-control p-3" placeholder="Qidirish" autocomplete="off" aria-label="Dollar amount (with dot and two decimal places)">
+      <button style="box-shadow: 0px 0px 10px black;" class="btn btn-outline-success btn-primary text-light p-3">Qidirish</button>
+    </form>
+  </div>

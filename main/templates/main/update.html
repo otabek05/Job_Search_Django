@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+
+<form style="margin-top: 10%; margin-left: 25%;" class="form form-control w-50" action="" method='post'>
+    {% csrf_token %}
+
+    {{ form.as_div }}
+
+    <button class="btn btn-success m-2">O'zgartirish</button>
+</form>
+
+{% endblock %}

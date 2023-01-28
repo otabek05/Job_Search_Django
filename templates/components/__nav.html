@@ -1,0 +1,21 @@
+<nav class="navbar fixed-top bg-secondary">
+  <div class="container-fluid">
+    <h3>
+      <a href="{% url 'home' %}" style="text-decoration: none;font-size: 25px; " class="btn btn-outline-success btn-primary text-light p-2">Ishga Marhamat</a>
+
+    </h3>
+    <h2 class="text-light">Ishbor.uz</h2>
+    <div>
+      {% if not request.user.is_authenticated %}
+      <a class="btn btn-primary btn-outline-success text-light p-2" href="{% url 'login' %}">Kirish</a>
+      <a class="btn btn-primary btn-outline-success text-light p-2" href="{% url 'register' %}">Ro'yxatdan O'tish</a>
+      {% else %}
+      <a class="btn btn-primary btn-outline-success text-light p-2" href="{% url 'elon' %}">Ish Elon Berish</a>
+      <a class="btn btn-primary btn-outline-success text-light p-2" href="{% url 'myprofile' %}"> <i class="fa-solid fa-user"></i> {{ request.user }}</a>
+      <a class="btn btn-primary btn-outline-success text-light p-2" href="{% url 'logout' %}">Chiqish</a>
+      {% endif %}
+      
+
+    </div>
+  </div>
+</nav>

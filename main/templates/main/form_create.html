@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+ 
+<form style="margin-top: 10%; margin-left: 25%;" class="form form-control w-50" action="" method="post" >
+    {% csrf_token %}
+    <h1 class="text-center">Ish E'lon Berish</h1>
+    <label for="company">Kompanya nomi</label>
+    <input class="form-control" type="text" name="company" id="company">
+    <label for="title">Ish nomi</label>
+    <input class="form-control" type="text" name="title" id="title">
+    <label  for="category">Ish Turi</label>
+    <select class="form-control" name="category" id="category">
+        {% for category in categories %}
+        <option style="text-transform: uppercase;" value="{{ category.name }}">{{category.name }}</option>
+        {% endfor %}
+    </select>
+    <label  for="location">Hududi</label>
+
+    <select class="form-control" name="location" id="location">
+        {% for location in locations %}
+        <option style="text-transform: uppercase;" value="{{ location.name }}">{{ location.name }}</option>
+        {% endfor %}
+    </select>
+    <label for="descript">Ish haqida ma'lumot</label>
+    <textarea class="form-control" name="descript" id="descript" cols="30" rows="10"></textarea>
+    <label for="education">Ta'lim Darajaso</label>
+    <select class="form-control" name="education" id="education">
+
+        {% for edu in education %}
+        <option style="text-transform: uppercase;" value="{{ edu.name }}">{{ edu.name }}</option>
+        {% endfor %}
+    </select>
+    <label for="salary">Ish xaqqi</label>
+    <input type="text" class="form-control" name="salary">
+    <label for="">Aloqa</label>
+    <input class="form-control" type="text" name="contact" id="">
+    <button class="btn btn-primary">Ishni e'lon qilish</button>
+  </form>
+
+{% endblock %}
