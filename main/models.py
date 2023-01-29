@@ -67,6 +67,8 @@ class Message(models.Model):
     reciever = models.ForeignKey(to=User, on_delete=models.CASCADE, null=True)
     messege=models.TextField()
     contact = models.CharField(max_length=240)
+    file = models.FileField(storage="resume")
+
 
 
 
