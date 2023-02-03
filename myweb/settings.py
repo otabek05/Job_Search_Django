@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'myweb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'postgresql://${{ PGUSER }}:${{ PGPASSWORD }}@${{ PGHOST }}:${{ PGPORT }}/${{ PGDATABASE }}',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'PORT': '7651',
         'HOST': 'containers-us-west-85.railway.app',
